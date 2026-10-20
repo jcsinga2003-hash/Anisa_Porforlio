@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#829b97">
+
+    <title>Works | Anisa Alinog</title>
+
+    <link rel="stylesheet" href="Works.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">ANISA<span class="pink">.ALINOG</span></span>
+        </div>
+
+
+
+
+      
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+            <a href="aboutAnisa.html">ABOUT ME</a>
+            <a href="Works.html">WORKS</a>
+            <a href="SkillsAnisa.html">SKILLS</a>
+            <a href="EducationAnisa.html">EDUCATION</a>
+            <a href="AchivementsAnisa.html">ACHIEVEMENTS</a>
+            <a href="PreferencesAnisa.html">PREFERENCES</a>
+        </nav>
+      </header>
+
+
+    <main>
+
+        <section class="intro" aria-labelledby="page-title">
+
+            <div>
+                <p class="eyebrow">
+                    A little collection of what I do
+                </p>
+
+                <h1 id="page-title">
+                    My Works
+                </h1>
+            </div>
+
+            <p class="intro-copy">
+                A selection of school projects and creative work—made with curiosity,
+                care, and a love for learning.
+            </p>
+
+        </section>
+
+
+        <div class="filters" role="group" aria-label="Filter works">
+
+            <button class="filter active" type="button" data-filter="all">
+                All works
+            </button>
+
+            <button class="filter" type="button" data-filter="business">
+                BSBA Colleges
+            </button>
+
+            <button class="filter" type="button" data-filter="academic">
+                Madrasa
+            </button>
+
+            <button class="filter" type="button" data-filter="creative">
+                Creative Works
+            </button>
+
+        </div>
+
+
+        <section class="grid" aria-label="Portfolio projects">
+
+           
+            <article class="work-card" data-category="business">
+
+                <div class="photo">
+                    <img
+                        src="WOrksAniee.jpg"
+                        alt="Notebook and planning materials on a desk"
+                        loading="lazy"
+                    >
+
+                    <span class="number">
+                        01
+                    </span>
+                </div>
+
+                <div class="card-body">
+
+                    <span class="category">
+                        Business
+                    </span>
+
+                    <h2>
+                        Business Plan
+                    </h2>
+
+                    <p class="description">
+                        a business that aims to provide fresh fruits, vegetables, seafood, and other essential food products directly to customers. It focuses on offering fresh, high-quality products at reasonable prices while making grocery shopping more convenient and accessible. Through its delivery service, customers can save time and effort by receiving their groceries at their doorstep. FreshDirect PH also promotes healthy eating by providing fresh and nutritious food for families and individuals. Its goal is to deliver freshness, convenience, and customer satisfaction through reliable service and quality products.
+                    </p>
+
+                    <div class="card-footer">
+                        <span class="tag">
+                            Planning · Strategy
+                        </span>
+
+                        <span class="arrow" aria-hidden="true">
+                            ↗
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+          
+            
+
+            
+
+        </section>
+
+    </main>
+
+
+    <script>
+        const filterButtons = document.querySelectorAll(".filter");
+        const workCards = document.querySelectorAll(".work-card");
+
+        filterButtons.forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                const category = button.dataset.filter;
+
+                filterButtons.forEach((item) => {
+                    item.classList.toggle("active", item === button);
+                });
+
+                workCards.forEach((card) => {
+                    card.hidden =
+                        category !== "all" &&
+                        card.dataset.category !== category;
+                });
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

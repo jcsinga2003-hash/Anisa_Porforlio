@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e1fff7">
+    <link rel="stylesheet" href="WorksAnisa.css">
+    <title>Works | Anisa Alinog</title>
+
+    
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">ANISA<span class="pink">.ALINOG</span></span>
+        </div>
+
+
+
+
+      
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+            <a href="aboutAnisa.html">ABOUT ME</a>
+            <a href="WorksAnisa.css">WORKS</a>
+            <a href="SkillsAnisa.html">SKILLS</a>
+            <a href="EducationAnisa.html">EDUCATION</a>
+            <a href="AchivementsAnisa.html">ACHIEVEMENTS</a>
+            <a href="PreferencesAnisa.html">PREFERENCES</a>
+        </nav>
+      </header>
+
+    <main>
+
+        <section aria-labelledby="page-title">
+
+            <div class="heading-row">
+
+                <div>
+                    <p class="eyebrow">
+                        Collection of my work
+                    </p>
+
+                    <h1 id="page-title">
+                        My Works<span style="color: #83dfbb">.</span>
+                    </h1>
+
+                    <p class="intro">
+                        A selection of academic projects, ideas, and experiences
+                        from my journey as a BSBA Islamic Banking student.
+                    </p>
+                </div>
+
+                <div class="count">
+                     Alhamdullillah, I have completed 6 works so far.
+                </div>
+
+            </div>
+
+            <div
+                class="filters"
+                role="group"
+                aria-label="Filter projects">
+
+                <button
+                    class="filter active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true">
+                    All works
+                </button>
+
+                <button
+                    class="filter"
+                    type="button"
+                    data-filter="academic"
+                    aria-pressed="false">
+                    Academic
+                </button>
+
+                <button
+                    class="filter"
+                    type="button"
+                    data-filter="business"
+                    aria-pressed="false">
+                    Business
+                </button>
+
+                <button
+                    class="filter"
+                    type="button"
+                    data-filter="community"
+                    aria-pressed="false">
+                    Community
+                </button>
+
+            </div>
+
+            <div class="grid" id="work-grid">
+
+                <!-- WORK 01 -->
+                <article class="card" data-category="business">
+
+                    <div class="visual business">
+                        <span class="visual-label">01</span>
+                        <span
+                            class="visual-icon"
+                            aria-hidden="true">
+                            ✦
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="tag">
+                            Business · Group project
+                        </span>
+
+                        <h2>
+                            Propose Business Plan
+                        </h2>
+
+                        <p>
+                            is a delivery business that provides fresh fruits, vegetables, seafood, and other food essentials directly to customers. It aims to offer high-quality products at reasonable prices while making shopping more convenient and accessible. Through its reliable delivery service, FreshDirect PH helps customers save time and effort while ensuring they can easily access fresh food for their daily needs. Its goal is to provide excellent customer service and become a trusted choice for convenient and fresh food shopping.
+                        </p>
+
+                        <div class="card-foot">
+                            <span>Business Planning</span>
+
+                            <span
+                                class="arrow"
+                                aria-hidden="true">
+                                ↗
+                            </span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+               
+
+            </div>
+
+
+            <!-- NOTE -->
+            <aside class="note">
+
+                <span aria-hidden="true">
+                    🌱
+                </span>
+
+                <span>
+                    This portfolio is a snapshot of my learning journey.
+                    I’m always growing, exploring new ideas, and adding to
+                    my work.
+                </span>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Made by Anisa Alinog · 2026
+    </footer>
+
+
+    <script>
+
+        const filterButtons = document.querySelectorAll('.filter');
+        const cards = document.querySelectorAll('.card');
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener('click', () => {
+
+                const selected = button.dataset.filter;
+
+                filterButtons.forEach(item => {
+
+                    const active = item === button;
+
+                    item.classList.toggle('active', active);
+
+                    item.setAttribute(
+                        'aria-pressed',
+                        String(active)
+                    );
+
+                });
+
+                cards.forEach(card => {
+
+                    card.hidden =
+                        selected !== 'all' &&
+                        card.dataset.category !== selected;
+
+                });
+
+            });
+
+        });
+
+
+        const menuButton = document.querySelector('.menu-toggle');
+        const navigation = document.querySelector('nav');
+
+        menuButton.addEventListener('click', () => {
+
+            const expanded =
+                menuButton.getAttribute('aria-expanded') === 'true';
+
+            menuButton.setAttribute(
+                'aria-expanded',
+                String(!expanded)
+            );
+
+            navigation.classList.toggle(
+                'open',
+                !expanded
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>

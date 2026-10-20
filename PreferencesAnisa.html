@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preferences | Anisa Alinog</title>
+
+    <link rel="stylesheet" href="PreferencesAnisa.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <span
+                class="brand-mark"
+                aria-hidden="true"
+            ></span>
+
+            <span class="brand-name">
+                ANISA<span class="pink">.ALINOG</span>
+            </span>
+
+        </div>
+
+
+        <nav
+            class="nav"
+            aria-label="Main navigation"
+        >
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="aboutAnisa.html">
+                ABOUT ME
+            </a>
+
+            <a href="Works.html">
+                WORKS
+            </a>
+
+            <a href="SkillsAnisa.html">
+                SKILLS
+            </a>
+
+            <a href="EducationAnisa.html">
+                EDUCATION
+            </a>
+
+            <a href="AchivementsAnisa.html">
+                ACHIEVEMENTS
+            </a>
+
+            <a href="PreferencesAnisa.html">
+                PREFERENCES
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main id="preferences">
+
+        <p class="eyebrow">
+            A little about me
+        </p>
+
+        <h1>
+            My Preferences
+        </h1>
+
+        <p class="intro">
+            A few of my favorite things and the little details
+            that make me who I am.
+        </p>
+
+
+        <section
+            class="panel"
+            aria-label="Personal preferences"
+        >
+
+            <!-- Favorite Color -->
+            <div class="row">
+
+                <div>
+                    <h2>
+                        Favorite color
+                    </h2>
+
+                    <p>
+                        The color I’m always drawn to is Sky Blue.
+                    </p>
+                </div>
+
+                <span class="preference">
+
+                    <img
+                        src="SkyBlueNissa.jpg"
+                        alt="Lush green leaves"
+                        loading="lazy"
+                    >
+
+                </span>
+
+            </div>
+
+
+           
+
+               
+
+
+<!-- Music -->
+<div class="row">
+
+    <div>
+        <h2>Music</h2>
+        <p>The sounds I love listening to arabic music specially "Awedak" song by Ayed.</p>
+    </div>
+
+    <span class="preference">
+
+        <div class="music-player">
+
+            <audio id="myMusic">
+                <source src="AwadekNissa.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+            </audio>
+
+            <button
+                type="button"
+                class="play-button"
+                onclick="toggleMusic()"
+                aria-label="Play music"
+                id="playButton"
+            >
+                ▶
+            </button>
+
+        </div>
+
+    </span>
+
+</div>
+
+
+            <!-- Food -->
+            <div class="row">
+
+                <div>
+                    <h2>
+                        Favorite Food
+                    </h2>
+
+                    <p>
+                        A meal or treat I can always enjoy is Iskabitchee😋.
+                    </p>
+                </div>
+
+                <span class="preference">
+
+                    <img
+                        src="FavFood.jpg"
+                        alt="Fresh colorful meal"
+                        loading="lazy"
+                    >
+
+                </span>
+
+            </div>
+
+
+            <!-- Free Time -->
+            <div class="row">
+
+                <div>
+                    <h2>
+                        In my free time
+                    </h2>
+
+                    <p>
+                        The things I do when im in my free time is reading Qur'an.
+                    </p>
+                </div>
+
+                <span class="preference">
+
+                    <img
+                        src="ReadingQuran.jpg"
+                        alt="Person reading the Quran"
+                        loading="lazy"
+                    >
+
+                </span>
+
+            </div>
+
+            <div class="row">
+
+                <div>
+                    <h2>
+                        The One's that make me who I am
+                    </h2>
+
+                    <p>
+                        Who I am today is because of the people who guide me closer to Allah, and above all, my family, who means everything to me..
+                    </p>
+                </div>
+
+                <span class="preference">
+
+                    <img
+                        src="FamilyNissa.jpg"
+                        alt="Person reading the Quran"
+                        loading="lazy"
+                    >
+
+                </span>
+
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+    
+<!-- Image Lightbox -->
+<div
+    class="image-lightbox"
+    id="imageLightbox"
+    onclick="closeLightbox(event)"
+>
+    <button
+        type="button"
+        class="close-lightbox"
+        onclick="hideLightbox()"
+        aria-label="Close enlarged image"
+    >
+        &times;
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Enlarged preference image"
+    >
+</div>
+
+    
+<script>
+    function toggleMusic() {
+        const music = document.getElementById("myMusic");
+        const button = document.getElementById("playButton");
+
+        if (music.paused) {
+            music.play();
+            button.innerHTML = "❚❚";
+            button.setAttribute("aria-label", "Pause music");
+        } else {
+            music.pause();
+            button.innerHTML = "▶";
+            button.setAttribute("aria-label", "Play music");
+        }
+
+        music.onended = function () {
+            button.innerHTML = "▶";
+            button.setAttribute("aria-label", "Play music");
+        };
+    }
+
+    
+// Open enlarged image
+document.querySelectorAll(".preference img").forEach(function (image) {
+    image.addEventListener("click", function () {
+        const lightbox = document.getElementById("imageLightbox");
+        const enlargedImage = document.getElementById("lightboxImage");
+
+        enlargedImage.src = this.src;
+        enlargedImage.alt = this.alt;
+
+        lightbox.classList.add("active");
+    });
+});
+
+// Close image when clicking outside it
+function closeLightbox(event) {
+    if (event.target.id === "imageLightbox") {
+        hideLightbox();
+    }
+}
+
+// Close image using the close button
+function hideLightbox() {
+    document.getElementById("imageLightbox").classList.remove("active");
+}
+
+// Close image using the Escape key
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        hideLightbox();
+    }
+});
+
+
+    
+</script>
+
+</body>
+
+</html>

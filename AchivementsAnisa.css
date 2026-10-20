@@ -1,0 +1,319 @@
+
+    :root {
+        --ink: #29474b;
+        --muted: #647b7b;
+        --green: #48a4a7;
+        --line: rgba(41, 71, 75, 0.15);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        background:#bdecfc
+    }
+
+
+ .topbar {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 44px 18px 48px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        background: rgba(8, 13, 14, 0.42);
+        backdrop-filter: blur(5px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        font-size: 1.08rem;
+      }
+
+      .brand-mark {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #b6ffff, #64ede8 50%, #3f9b98);
+        position: relative;
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+      }
+
+      .brand-mark::before {
+        content: "";
+        position: absolute;
+        width: 52%;
+        height: 52%;
+        background: rgba(255,255,255,0.9);
+        border-radius: 55% 45% 60% 40%;
+        top: 6px;
+        left: 8px;
+        transform: rotate(-15deg);
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #b6feff;
+        left: 12px;
+        top: 16px;
+        box-shadow: 8px 1px 0 0 rgba(174, 248, 251, 0.9);
+      }
+
+      .brand-name {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        color: #f7f1f5;
+        letter-spacing: 0.06em;
+      }
+
+      .brand-name .pink {
+        color: #64ebed;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 38px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: rgba(255,255,255,0.9);
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        opacity: 0.95;
+        transition: all 0.3s ease;
+      }
+
+      .nav a:hover {
+        background: rgba(144, 223, 232, 0.08);
+        color: #64edeb;
+        margin: 3px;
+        transition: all 0.3s ease;
+      }
+
+
+
+
+
+    main {
+        width: min(1120px, calc(100% - 48px));
+        margin: auto;
+        padding: 76px 0 80px;
+    }
+
+    .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: clamp(46px, 7vw, 78px);
+        line-height: 1;
+        letter-spacing: -0.065em;
+    }
+
+    h1 span {
+        color: var(--green);
+    }
+
+    .intro {
+        max-width: 620px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .heading {
+        margin: 62px 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+    }
+
+    .heading h2 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+    }
+
+    .heading p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    article {
+        min-height: 245px;
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #ffffff75;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+    article:hover {
+        transform: translateY(-4px);
+        background: #ffffffc9;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 36px;
+    }
+
+    .num {
+        color: #82a6a8;
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        background: #d9f8f8;
+        color: var(--green);
+        font-size: 19px;
+    }
+
+    article h3 {
+        margin: 0 0 10px;
+        font-size: 19px;
+        letter-spacing: -0.03em;
+    }
+
+    article p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .note {
+        margin-top: 20px;
+        padding: 18px 21px;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        border-radius: 15px;
+        background: #a6e5ef55;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .note strong {
+        color: var(--ink);
+    }
+
+    .spark {
+        color: var(--green);
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 0 20px 28px;
+        text-align: center;
+        color: #788e90;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 900px) {
+        header {
+            padding: 22px 26px;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 19px;
+        }
+
+        nav {
+            justify-content: flex-start;
+            gap: 14px 20px;
+        }
+
+        .cards {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 600px) {
+        nav a {
+            font-size: 10px;
+        }
+
+        main {
+            width: calc(100% - 36px);
+            padding: 52px 0;
+        }
+
+        .intro {
+            font-size: 16px;
+        }
+
+        .heading {
+            margin-top: 45px;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        article {
+            min-height: 215px;
+        }
+
+        .top {
+            margin-bottom: 25px;
+        }
+    }
